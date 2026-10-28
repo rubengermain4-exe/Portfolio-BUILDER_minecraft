@@ -1,0 +1,450 @@
+/* ========================================
+   GALERIE — PORTFOLIO RUBEN GERMAIN
+======================================== */
+
+.gallery-page *,
+.gallery-page *::before,
+.gallery-page *::after {
+    box-sizing: border-box;
+}
+
+/* ========================================
+   PAGE
+======================================== */
+
+.gallery-page {
+    min-height: 100vh;
+    padding: 120px 0 80px;
+    background: #050505;
+    color: #fff;
+}
+
+/* ========================================
+   EN-TÊTE
+======================================== */
+
+.gallery-header {
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.gallery-kicker {
+    margin: 0 0 15px;
+    color: #7777ff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+.gallery-header h1 {
+    margin: 0;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.gallery-header > p:not(.gallery-kicker) {
+    max-width: 650px;
+    margin: 20px auto 0;
+    color: #aaa;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ========================================
+   BOUTON RETOUR
+======================================== */
+
+.gallery-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    padding: 13px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    background: #2926ee;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.gallery-back:hover {
+    background: #1d1ab8;
+    border-color: #5552ff;
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   GALERIE
+======================================== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* ========================================
+   IMAGES
+======================================== */
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    background: #111;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.75);
+}
+
+/* ========================================
+   SURCOUCHE
+======================================== */
+
+.gallery-item::after {
+    content: "Voir l'image";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/* ========================================
+   LIGHTBOX
+======================================== */
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.92);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.gallery-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-lightbox img {
+    display: block;
+    max-width: min(1100px, 95vw);
+    max-height: 85vh;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.gallery-lightbox.active img {
+    transform: scale(1);
+}
+
+/* ========================================
+   FERMETURE LIGHTBOX
+======================================== */
+
+.gallery-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.gallery-lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+/* ========================================
+   VARIANTE — PAGE JAPONAISE
+======================================== */
+
+.gallery-page--japan {
+    --accent: #b8402c;
+}
+
+.gallery-page--japan .gallery-back {
+    background: #2926ee;
+}
+
+/* ========================================
+   EN-TÊTE SOBRE (remplace l'eyebrow tout-majuscules)
+======================================== */
+
+.gallery-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 18px;
+    color: #cbb9b4;
+    font-size: 0.95rem;
+}
+
+.gallery-eyebrow-bar {
+    display: inline-block;
+    width: 2px;
+    height: 18px;
+    background: var(--accent, #b8402c);
+}
+
+.gallery-intro {
+    max-width: 56ch;
+    margin: 18px auto 0;
+    color: #aaa;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ========================================
+   IMAGE EN VEDETTE
+======================================== */
+
+.gallery-feature {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 22px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    background: #111;
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+}
+
+.gallery-feature img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.gallery-feature:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.8);
+}
+
+/* ========================================
+   MOSAÏQUE ASYMÉTRIQUE
+======================================== */
+
+.gallery-mosaic {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 190px;
+    grid-auto-flow: dense;
+    gap: 18px;
+}
+
+.mosaic-item {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    background: #111;
+    cursor: pointer;
+}
+
+.mosaic-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.mosaic-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.75);
+}
+
+.mosaic-item::after {
+    content: "Voir l'image";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.mosaic-item:hover::after {
+    opacity: 1;
+}
+
+.mosaic-item--tall {
+    grid-row: span 2;
+}
+
+.mosaic-item--wide {
+    grid-column: span 2;
+}
+
+/* ========================================
+   TABLETTE
+======================================== */
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 220px;
+    }
+
+    .mosaic-item--wide {
+        grid-column: span 2;
+    }
+
+    .mosaic-item--tall {
+        grid-row: span 1;
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+    .gallery-page {
+        padding: 95px 0 50px;
+    }
+
+    .gallery-header {
+        margin-bottom: 35px;
+    }
+
+    .gallery-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .gallery-header > p:not(.gallery-kicker) {
+        padding: 0 10px;
+        font-size: 0.95rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .gallery-mosaic {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 220px;
+        gap: 14px;
+    }
+
+    .mosaic-item--wide,
+    .mosaic-item--tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .gallery-feature {
+        aspect-ratio: 4 / 3;
+        margin-bottom: 16px;
+    }
+
+    .gallery-item {
+        min-height: 240px;
+    }
+
+    .gallery-item img {
+        min-height: 240px;
+    }
+
+    .gallery-back {
+        padding: 12px 18px;
+    }
+
+    .gallery-lightbox {
+        padding: 15px;
+    }
+
+    .gallery-lightbox img {
+        max-width: 95vw;
+        max-height: 80vh;
+    }
+
+    .gallery-lightbox-close {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* ========================================
+   RÉDUCTION DES ANIMATIONS
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-item img,
+    .gallery-item::after,
+    .gallery-back,
+    .gallery-lightbox,
+    .gallery-lightbox img,
+    .gallery-lightbox-close,
+    .gallery-feature img,
+    .mosaic-item img,
+    .mosaic-item::after {
+        transition: none;
+    }
+}

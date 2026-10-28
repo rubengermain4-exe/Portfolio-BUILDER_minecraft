@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Style Japonais — Ruben Germain</title>
+
+    <meta
+        name="description"
+        content="Découvrez les constructions Minecraft de style japonais réalisées par Ruben Germain."
+    >
+
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/gallery.css">
+
+</head>
+
+<body>
+
+    <main class="gallery-page gallery-page--japan">
+
+        <div class="container">
+
+            <!-- EN-TÊTE -->
+            <header class="gallery-header">
+
+                <div class="gallery-eyebrow">
+                    <span class="gallery-eyebrow-bar"></span>
+                    Mes réalisations
+                </div>
+
+                <h1>
+                    Autres Builds
+                </h1>
+
+                <p class="gallery-intro">
+                    Toits incurvés, bois brut et jardins pensés pour le vide
+                    autant que pour le plein — une architecture qui privilégie
+                    l'équilibre asymétrique à la symétrie parfaite.
+                </p>
+
+                <a
+                    href="../index.html#realisations"
+                    class="gallery-back"
+                    aria-label="Retourner à la section réalisations"
+                >
+                    ← Retour aux réalisations
+                </a>
+
+            </header>
+
+
+            <!-- IMAGE EN VEDETTE -->
+            <figure class="gallery-item gallery-feature">
+
+                <img
+                    src="../img/japonais/japonais-01.jpg"
+                    alt="Construction Minecraft inspirée de l'architecture japonaise"
+                    width="1600"
+                    height="900"
+                    fetchpriority="high"
+                    decoding="async"
+                >
+
+            </figure>
+
+
+            <!-- MOSAÏQUE -->
+            <section
+                class="gallery-mosaic"
+                aria-label="Galerie des constructions Minecraft de style japonais"
+            >
+
+                <figure class="gallery-item mosaic-item mosaic-item--tall">
+                    <img
+                        src="../img/japonais/japonais-02.jpg"
+                        alt="Construction Minecraft japonaise avec architecture traditionnelle"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <figure class="gallery-item mosaic-item">
+                    <img
+                        src="../img/japonais/japonais-03.jpg"
+                        alt="Construction Minecraft de style japonais traditionnel"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <figure class="gallery-item mosaic-item mosaic-item--wide">
+                    <img
+                        src="../img/japonais/japonais-04.jpg"
+                        alt="Détail d'une construction japonaise"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <figure class="gallery-item mosaic-item">
+                    <img
+                        src="../img/japonais/japonais-05.jpg"
+                        alt="Vue d'ensemble d'un bâtiment de style japonais"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <figure class="gallery-item mosaic-item">
+                    <img
+                        src="../img/japonais/japonais-06.jpg"
+                        alt="Détail architectural japonais"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+                <figure class="gallery-item mosaic-item">
+                    <img
+                        src="../img/japonais/japonais-07.jpg"
+                        alt="Construction Minecraft japonaise, vue nocturne"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- LIGHTBOX -->
+    <div
+        class="gallery-lightbox"
+        id="gallery-lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Aperçu de l'image"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+
+        <button
+            class="gallery-lightbox-close"
+            type="button"
+            aria-label="Fermer l'image agrandie"
+        >
+            <span aria-hidden="true">×</span>
+        </button>
+
+        <img
+            id="lightbox-image"
+            src=""
+            alt=""
+            decoding="async"
+        >
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script
+        src="../js/gallery.js"
+        defer
+    ></script>
+
+</body>
+</html>
